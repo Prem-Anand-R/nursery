@@ -5,13 +5,12 @@ import Image from 'next/image';
 import { PLANTS } from '@/constants/data';
 import Button from '@/components/ui/Button';
 
-interface ProductDetailPageProps {
-  params: {
-    id: string;
-  };
+
+interface PageProps {
+  params: { id: string };
 }
 
-export default function ProductDetailPage({ params }: ProductDetailPageProps) {
+export default function ProductDetailPage({ params }: PageProps) {
   const [quantity, setQuantity] = useState(1);
   const plant = PLANTS.find(p => p.id === params.id);
 
