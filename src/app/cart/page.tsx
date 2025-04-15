@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { useCart } from '@/context/CartContext';
 import Button from '@/components/ui/Button';
+import Link from "next/link";
 
 export default function CartPage() {
   const { items, updateQuantity, removeFromCart, totalPrice } = useCart();
@@ -14,9 +15,11 @@ export default function CartPage() {
       <div className="py-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl font-bold mb-8">Your Cart is Empty</h1>
-          <Button variant="primary" size="lg" href="/shop">
-            Continue Shopping
-          </Button>
+          <Link href="/shop">
+            <Button variant="primary" size="lg">
+              Continue Shopping
+            </Button>
+          </Link>
         </div>
       </div>
     );
